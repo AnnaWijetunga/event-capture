@@ -46,11 +46,23 @@
 
   function logText(e) {
       console.log(this.classList.value);
+
   }
 
   // take all divs, loop over each one, listen for a click, and then run logText
-  divs.forEach(div => div.addEventListener('click', logText));
+  // capture: true part; running the function on the way down vs up
+  divs.forEach(div => div.addEventListener('click', logText, {
+      capture: false 
+  }));
 
+  // bubbling: ripple clicks all the way up, but you won't always SEE those
+
+  // the browser will first "capture": when you click on an element, it will ripple down - from top down
+  // then it captures all of those events
+  // then it starts from the bottom and it will bubble UP, which means it's triggering the events as you go up
+  // fire off those click events
+
+  
 
 
 
