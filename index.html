@@ -48,7 +48,9 @@
       console.log(this.classList.value);
   }
 
-  
+  // take all divs, loop over each one, listen for a click, and then run logText
+  divs.forEach(div => div.addEventListener('click', logText));
+
 
 
 
