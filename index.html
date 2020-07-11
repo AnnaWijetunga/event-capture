@@ -45,6 +45,8 @@
   const divs = document.querySelectorAll('div');
 
   function logText(e) {
+      // stop bubbling this event up
+      e.stopPropagation();
       console.log(this.classList.value);
 
   }
