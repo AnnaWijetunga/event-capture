@@ -54,7 +54,9 @@
   // take all divs, loop over each one, listen for a click, and then run logText
   // capture: true part; running the function on the way down vs up
   divs.forEach(div => div.addEventListener('click', logText, {
-      capture: true 
+      capture: false,
+      // listen for a click and unbind itself 
+      once: true
   }));
 
   // bubbling: ripple clicks all the way up, but you won't always SEE those
