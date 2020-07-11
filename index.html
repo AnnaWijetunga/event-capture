@@ -46,7 +46,7 @@
 
   function logText(e) {
       // stop bubbling this event up
-      e.stopPropagation();
+      e.stopPropagation(); // stop bubbling
       console.log(this.classList.value);
 
   }
@@ -54,7 +54,7 @@
   // take all divs, loop over each one, listen for a click, and then run logText
   // capture: true part; running the function on the way down vs up
   divs.forEach(div => div.addEventListener('click', logText, {
-      capture: false 
+      capture: true 
   }));
 
   // bubbling: ripple clicks all the way up, but you won't always SEE those
